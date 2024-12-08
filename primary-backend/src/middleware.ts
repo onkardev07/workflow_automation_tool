@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { JWT_PASSWORD } from "./config";
 
 interface JwtPayload {
-  id: string; // Define the structure of your JWT payload
+  id: string;
 }
 
 export function authMiddleware(
@@ -19,9 +19,9 @@ export function authMiddleware(
   }
 
   try {
-    const payload = jwt.verify(token, JWT_PASSWORD) as JwtPayload; // Type assertion
-    req.id = payload.id; // Attach the `id` to the request object
-    next(); // Pass control to the next middleware or route handler
+    const payload = jwt.verify(token, JWT_PASSWORD) as JwtPayload;
+    req.id = payload.id;
+    next();
   } catch (e) {
     res.status(403).json({ message: "You are not logged in" });
   }

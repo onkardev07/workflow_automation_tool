@@ -15,7 +15,6 @@ async function clearDatabase() {
 
 async function seedDatabase() {
   try {
-    // Seed available triggers
     await prisma.availableTrigger.create({
       data: {
         id: "webhook",
@@ -25,7 +24,6 @@ async function seedDatabase() {
       },
     });
 
-    // Seed available actions
     await prisma.availableAction.createMany({
       data: [
         {
@@ -50,8 +48,8 @@ async function seedDatabase() {
 }
 
 async function main() {
-  await clearDatabase(); // Step 1: Clear database
-  await seedDatabase(); // Step 2: Seed new data
+  await clearDatabase();
+  await seedDatabase();
 }
 
 main()

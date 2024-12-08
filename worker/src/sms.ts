@@ -23,7 +23,7 @@ export async function sendNotification({
   try {
     const params = {
       Message: message,
-      ...(phoneNumber && { PhoneNumber: phoneNumber }), // Optional phone number parameter
+      ...(phoneNumber && { PhoneNumber: phoneNumber }),
     };
 
     const result = await sns.publish(params).promise();

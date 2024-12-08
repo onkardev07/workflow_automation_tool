@@ -150,22 +150,12 @@ function ZapTable({ zaps }: { zaps: Zap[] }) {
                     hour: "2-digit",
                     minute: "2-digit",
                     second: "2-digit",
-                    hour12: false, // Set to `true` for 12-hour format with AM/PM
+                    hour12: false,
                   })
                   .replace(",", "")}
               </TableCell>
 
-              {/* Replace with dynamic date if available */}
               <TableCell>{`${HOOKS_URL}/hooks/catch/1/${z.id}`}</TableCell>
-              {/* <TableCell className="">
-                <LinkButton
-                  onClick={() => {
-                    router.push("/zap/" + z.id);
-                  }}
-                >
-                  Go
-                </LinkButton>
-              </TableCell> */}
             </TableRow>
           ))}
         </TableBody>

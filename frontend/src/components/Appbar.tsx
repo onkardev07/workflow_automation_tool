@@ -10,10 +10,9 @@ export const Appbar = () => {
   const [isTokenPresent, setIsTokenPresent] = useState(false);
 
   useEffect(() => {
-    // Check if a token exists in localStorage
     const token = localStorage.getItem("token");
-    setIsTokenPresent(!!token); // Set state based on whether token exists
-  }, []); // This will run only once when the component mounts
+    setIsTokenPresent(!!token);
+  }, []);
 
   return (
     <div className="flex border-b justify-between p-4">
@@ -21,7 +20,6 @@ export const Appbar = () => {
         Zapier
       </div>
 
-      {/* Conditionally render the red background div based on the token presence */}
       {!isTokenPresent && (
         <div className="flex">
           <div className="pr-4">
